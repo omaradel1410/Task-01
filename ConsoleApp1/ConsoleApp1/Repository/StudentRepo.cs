@@ -32,14 +32,5 @@ namespace ConsoleApp1.Repository
             }
         }
 
-
-        public string CreateListOfSubjects()
-        {
-
-
-
-            return "";
-        }
-
     }
 }
