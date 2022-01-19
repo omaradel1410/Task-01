@@ -60,13 +60,21 @@ namespace ConsoleApp1
 
             using (DbContainer Db = new DbContainer())
             {
-                var data = Db.Students.Select(x => x);
-                  
+                var data = Db.Students.Join(Db.Subjects,
+                    st => st.SubjectsId,
+                    sub => sub.Id,
+
+                    (st, sub) => new
+                    {
+                        sname = st.Name,
+                        sub.Name
+                    });
+
                 foreach (var item in data)
                 {
-                    Console.WriteLine( item.Id + "\n" + item.Name + "\n" + item.Gender + "\n" + item.SubjectsId);
+                    Console.WriteLine(item.sname + "\n" + item.Name);
                     Console.WriteLine("==============================================");
-                }
+                }            
             }
 
             #endregion
