@@ -9,7 +9,7 @@ namespace ConsoleApp1.Interface
 {
     public interface ITeachersRepo
     {
-        public string CreateListOfTeachers(List<Teachers> obj);
+        public string CreateListOfTeachers(List<Teacher> obj);
 
     }
 }

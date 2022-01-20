@@ -13,13 +13,13 @@ namespace ConsoleApp1.Repository
     {
     
 
-        public string CreateListOfStudent(List<Students> obj)
+        public string CreateListOfStudent(List<Student> obj)
         {
             try
             {
                 using (DbContainer Db = new DbContainer())
                 {
-                    Db.Students.AddRange(obj);
+                    Db.Student.AddRange(obj);
                     Db.SaveChanges();
                     Console.WriteLine("Data Created !");
                 }

@@ -11,7 +11,7 @@ namespace ConsoleApp1.Repository
 {
     public class TeachersRepo 
     {
-        public string CreateListOfTeachers(List<Teachers> obj)
+        public string CreateListOfTeachers(List<Teacher> obj)
         {
             try
             {

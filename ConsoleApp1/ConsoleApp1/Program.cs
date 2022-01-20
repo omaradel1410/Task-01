@@ -3,6 +3,8 @@ using ConsoleApp1.Entites;
 using ConsoleApp1.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+
 
 namespace ConsoleApp1
 {
@@ -60,6 +62,7 @@ namespace ConsoleApp1
 
             using (DbContainer Db = new DbContainer())
             {
+<<<<<<< Updated upstream
                 var data = Db.Students.Join(Db.Subjects,
                     st => st.SubjectsId,
                     sub => sub.Id,
@@ -75,6 +78,32 @@ namespace ConsoleApp1
                     Console.WriteLine(item.sname + "\n" + item.Name);
                     Console.WriteLine("==============================================");
                 }            
+=======
+
+                //var data01 = Db.Students.Select(x => x) ;
+
+                //foreach (var item in data01)
+                //{
+                //    Console.WriteLine(item.Id + "\n" + item.Name + "\n" + item.SubjectsId);
+                //    Console.WriteLine("==============================================");
+                //}
+
+                //var data = Db.Student.Join(Db.Subject,
+                //    st => st.Name,
+                //    sub => sub.Id,
+
+                //    (st, sub) => new
+                //    {
+                //        sname = st.Name,
+                //        sub.Name
+                //    });
+
+                //foreach (var item in data)
+                //{
+                //    Console.WriteLine(item.sname + "\n" + item.Name);
+                //    Console.WriteLine("==============================================");
+                //}
+>>>>>>> Stashed changes
             }
 
             #endregion
