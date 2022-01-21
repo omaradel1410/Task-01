@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Repository
 {
-    public class TeachersRepo 
+    public class TeacherRepo : ITeachersRepo
     {
-        public string CreateListOfTeachers(List<Teacher> obj)
+        public string CreateListOfTeacher(List<Teacher> obj)
         {
             try
             {
                 using (DbContainer Db = new DbContainer())
                 {
-                    Db.Teachers.AddRange(obj);
+                    Db.Teacher.AddRange(obj);
                     Db.SaveChanges();
                     Console.WriteLine("Data Created !");
                 }

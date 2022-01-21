@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1.Database;
 using ConsoleApp1.Entites;
+using ConsoleApp1.Model;
 using ConsoleApp1.Repository;
 using System;
 using System.Collections.Generic;
@@ -17,20 +18,20 @@ namespace ConsoleApp1
             #region CreateListOfTeachers
 
             //Loop:
-            //Teachers TE1 = new Teachers()
+            //Teacher TE1 = new Teacher()
             //{
-            //    //Id = 1,
+
             //    Name = Console.ReadLine(),
             //    Address = Console.ReadLine(),
-            //    Telephone = double.Parse(Console.ReadLine()),
-            //    SubjectsId = int.Parse(Console.ReadLine()),
+            //    Telephone = Console.ReadLine(),
+            //    SubjectId = int.Parse(Console.ReadLine()),
             //};
 
-            //List<Teachers> TeachersData = new List<Teachers>();
-            //TeachersData.Add(TE1);
+            //List<Teacher> TeacherData = new List<Teacher>();
+            //TeacherData.Add(TE1);
 
-            //TeachersRepo TR = new TeachersRepo();
-            //TR.CreateListOfTeachers(TeachersData);
+            //TeacherRepo TR = new TeacherRepo();
+            //TR.CreateListOfTeacher(TeacherData);
             //goto Loop;
 
             #endregion
@@ -38,21 +39,20 @@ namespace ConsoleApp1
             #region CreateListOfStudents
 
             //Loop:
-            //Students St = new Students()
+            //Student St = new Student()
             //{
-            //    //Id = 1,
+            //    
             //    Name = Console.ReadLine(),
             //    Gender = Console.ReadLine(),
             //    HireDate = DateTime.Today,
             //    SubjectsId = int.Parse(Console.ReadLine()),
-
             //};
 
-            //List<Students> StudentsData = new List<Students>();
+            //List<Student> StudentData = new List<Student>();
             //StudentsData.Add(St);
 
             //StudentRepo SR = new StudentRepo();
-            //SR.CreateListOfStudent(StudentsData);
+            //SR.CreateListOfStudent(StudentData);
             //goto Loop;
 
             #endregion
@@ -62,48 +62,17 @@ namespace ConsoleApp1
 
             using (DbContainer Db = new DbContainer())
             {
-<<<<<<< Updated upstream
-                var data = Db.Students.Join(Db.Subjects,
-                    st => st.SubjectsId,
-                    sub => sub.Id,
 
-                    (st, sub) => new
-                    {
-                        sname = st.Name,
-                        sub.Name
-                    });
+                var results = from s in Db.Student
+                              join St_Sb in Db.Student_Subject on s.Id equals St_Sb.StudentId
+                              join Sub in Db.Subject on St_Sb.SubjectId equals Sub.Id                     
+                              select new Sub_STVIewModel() { StName = s.Name, SubName = Sub.Name, StId = s.Id , NumberOfSUbject = St_Sb.SubjectId};
 
-                foreach (var item in data)
+                foreach (var it in results)
                 {
-                    Console.WriteLine(item.sname + "\n" + item.Name);
-                    Console.WriteLine("==============================================");
-                }            
-=======
+                    Console.WriteLine(it.StId + " " + it.StName + " " + it.SubName + " " + it.NumberOfSUbject);          
+                }
 
-                //var data01 = Db.Students.Select(x => x) ;
-
-                //foreach (var item in data01)
-                //{
-                //    Console.WriteLine(item.Id + "\n" + item.Name + "\n" + item.SubjectsId);
-                //    Console.WriteLine("==============================================");
-                //}
-
-                //var data = Db.Student.Join(Db.Subject,
-                //    st => st.Name,
-                //    sub => sub.Id,
-
-                //    (st, sub) => new
-                //    {
-                //        sname = st.Name,
-                //        sub.Name
-                //    });
-
-                //foreach (var item in data)
-                //{
-                //    Console.WriteLine(item.sname + "\n" + item.Name);
-                //    Console.WriteLine("==============================================");
-                //}
->>>>>>> Stashed changes
             }
 
             #endregion

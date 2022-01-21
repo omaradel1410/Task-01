@@ -18,7 +18,7 @@ namespace ConsoleApp1.Entites
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public ICollection<Student> Student { get; set; }
+        public ICollection<Student_Subject> Student_Subject { get; set; }
         public ICollection<Teacher> Teachers { get; set; }
 
     }

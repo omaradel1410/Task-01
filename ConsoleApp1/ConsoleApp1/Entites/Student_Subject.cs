@@ -13,7 +13,7 @@ namespace ConsoleApp1.Entites
         public int StudentId { get; set; } // Forgin Key For Student 
         public Student Student { get; set; } // Navgation 
 
-        public int SubjectsId { get; set; } // Forgin Key For Subjects 
+        public int SubjectId { get; set; } // Forgin Key For Subject
         public Subject Subject { get; set; } // Navgation 
 
     }

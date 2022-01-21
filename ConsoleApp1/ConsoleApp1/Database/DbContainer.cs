@@ -13,6 +13,7 @@ namespace ConsoleApp1.Database
         public DbSet<Teacher> Teacher { get; set; }
         public DbSet<Student> Student { get; set; }
         public DbSet<Subject> Subject { get; set; }
+        public DbSet<Student_Subject> Student_Subject { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

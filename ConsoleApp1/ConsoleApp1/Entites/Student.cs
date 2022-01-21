@@ -17,7 +17,8 @@ namespace ConsoleApp1.Entites
 
         public DateTime HireDate { get; set; }
 
-        public ICollection<Subject> Subject { get; set; }
+        public ICollection<Student_Subject> Student_Subject { get; set; }
+
 
     }
 }

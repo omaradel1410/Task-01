@@ -19,7 +19,7 @@ namespace ConsoleApp1.Entites
         public string Address { get; set; } 
         public string Telephone { get; set; }
 
-        public int SubjectId { get; set; } // Forgin Key For Subjects 
+        public int SubjectId { get; set; } // Forgin Key For Subject
         public Subject Subject { get; set; }  // Navgation 
     }
 }

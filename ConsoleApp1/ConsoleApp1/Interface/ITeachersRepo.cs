@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ConsoleApp1.Interface
 {
     public interface ITeachersRepo
     {
-        public string CreateListOfTeachers(List<Teacher> obj);
+        public string CreateListOfTeacher(List<Teacher> obj);
 
     }
 }
