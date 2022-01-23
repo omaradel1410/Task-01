@@ -9,8 +9,10 @@ namespace ConsoleApp1.Model
     public class Sub_STVIewModel
     {
         public int StId { get; set; }
-        public string StName { get; set; }
-        public string SubName { get; set; }
-        public int NumberOfSUbject { get; set; }
+        //public string StName { get; set; }
+        public string SubjectName { get; set; }
+
+
+
     }
 }
